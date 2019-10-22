@@ -14,7 +14,7 @@ class XiciSpider(scrapy.Spider):
 
     custom_settings = {
         "ITEM_PIPELINES": {
-            "beikeSpider.pipelines.IpPipeline"
+            "beikeSpider.pipelines.IpPipeline": 10
         }
     }
 
@@ -27,7 +27,7 @@ class XiciSpider(scrapy.Spider):
             tds = tr.find_all('td')
             ip = tds[1].get_text()
             port = tds[2].get_text()
-            speed = tds[9].find('div', title=True)['title']
+            speed = tds[6].find('div', title=True)['title']
 
             item = IpItem({
                 'ip': ip,

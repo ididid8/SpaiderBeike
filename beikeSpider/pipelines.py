@@ -87,7 +87,7 @@ class BeikespiderPipeline(BasicDbPipeline):
             build_year,
             community_name,
             community_href,
-            community_area_name,
+            community_area_name
         ) VALUES (
             %s,
             %s,
@@ -103,7 +103,7 @@ class BeikespiderPipeline(BasicDbPipeline):
             %s,
             %s,
             %s,
-            %s,
+            %s
         )
         """
         args = (
